@@ -1,6 +1,19 @@
 [package]
-name = "icon_gen"
+name = "icon_gen_cli"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "icon_gen"
+path = "src/main.rs"
+
+[lib]
+name = "icon_gen_cli_lib"
+path = "src/lib.rs"
+
 [dependencies]
+tokio = { version = "1.52.3", features = ["macros", "rt-multi-thread"] }
+clap = { version = "4.6.1", features = ["derive", "wrap_help", "suggestions", "string", "usage", "help", "error-context", "color", "unicode"] }
+color-eyre = { workspace = true }
+pretty_env_logger = { version = "0.5.0" }
+icon_gen_lib = { path = "../lib" }
