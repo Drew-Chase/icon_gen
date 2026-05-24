@@ -1,6 +1,29 @@
 [package]
-name = "simply_igen"
+name = "icon_gen_desktop"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.92.0"
+
+[[bin]]
+name = "simply_igen"
+path = "src/main.rs"
 
 [dependencies]
+# Internal crates
+icon_gen_cli = { path = "../cli" }
+icon_gen_lib = { path = "../lib" }
+
+# Mutithreading
+tokio = { version = "1.52.3" }
+
+# Desktop
+slint = { version = "1.16.1", features = ["log", "serde", "renderer-skia", "backend-winit", "renderer-winit-skia"] }
+
+# Feedback
+log = { workspace = true }
+color-eyre = { workspace = true }
+
+
+
+[build-dependencies]
+slint-build = { version = "1.16.1" }

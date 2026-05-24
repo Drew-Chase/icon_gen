@@ -1,3 +1,17 @@
-fn main() {
-    println!("Hello, world!");
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+slint::include_modules!();
+use color_eyre::{install, Result};
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    install()?;
+    if std::env::args().len() > 1 {
+        // This means that we are running the app from the command line
+        icon_gen_cli_lib::run().await?;
+        return Ok(());
+    }
+
+    let main_window = MainWindow::new()?;
+    Ok(main_window.run()?)
 }
