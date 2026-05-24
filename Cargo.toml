@@ -5,4 +5,4 @@ members = ["crates/cli", "crates/lib", "crates/desktop"]
 
 [workspace.dependencies]
 log = { version = "0.4.29" }
-color-eyre = { version = "0.6.5", features = ["url", "track-caller", "tracing-error", "issue-url", "color-spantrace", "capture-spantrace"] }
+color-eyre = { version = "0.6.5", features = ["track-caller", "issue-url"] }

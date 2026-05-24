@@ -13,16 +13,12 @@ path = "src/main.rs"
 icon_gen_cli = { path = "../cli" }
 icon_gen_lib = { path = "../lib" }
 
-# Mutithreading
-tokio = { version = "1.52.3" }
-
 # Desktop
 slint = { version = "1.16.1", features = ["log", "serde", "renderer-skia", "backend-winit", "renderer-winit-skia"] }
 
 # Feedback
 log = { workspace = true }
 color-eyre = { workspace = true }
-
 
 
 [build-dependencies]
