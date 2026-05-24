@@ -3,12 +3,11 @@
 slint::include_modules!();
 use color_eyre::{install, Result};
 
-#[tokio::main]
-async fn main() -> Result<()> {
+  fn main() -> Result<()> {
     install()?;
     if std::env::args().len() > 1 {
         // This means that we are running the app from the command line
-        icon_gen_cli_lib::run().await?;
+        icon_gen_cli_lib::run()?;
         return Ok(());
     }
 
