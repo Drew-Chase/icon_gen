@@ -15,3 +15,6 @@ build:
 # Clean the entire workspace
 clean:
     cargo clean
+
+test:
+    cargo test --release
