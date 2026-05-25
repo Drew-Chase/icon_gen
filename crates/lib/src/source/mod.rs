@@ -1,2 +1,2 @@
-mod svg;
-mod raster;
+pub mod raster;
+pub mod svg;
